@@ -1,0 +1,937 @@
+{
+	"info": {
+		"_postman_id": "48b979fa-1644-4051-a6ad-2b08f16cbc7c",
+		"name": "Truedata (Updated) Postman HTTP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "UserId",
+							"value": "Enter_Your_Login_Id",
+							"type": "text"
+						},
+						{
+							"key": "Provider",
+							"value": "TRUEDATA",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "Enter_Your_Password",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://180.179.151.146/IDAUTH/Logout.aspx",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"IDAUTH",
+						"Logout.aspx"
+					]
+				},
+				"description": "Login"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://180.179.151.146/IDAUTH/Login.aspx?userid=Enter_Your_Login_Id&password=Enter_Your_Password&PROVIDER=TRUEDATA",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"IDAUTH",
+						"Login.aspx"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "Enter_Your_Login_Id"
+						},
+						{
+							"key": "password",
+							"value": "Enter_Your_Password"
+						},
+						{
+							"key": "PROVIDER",
+							"value": "TRUEDATA"
+						}
+					]
+				},
+				"description": "Login"
+			},
+			"response": []
+		},
+		{
+			"name": "Master 1 - zip format ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://180.179.151.146/IM/1.Nmaster1.zip",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"IM",
+						"1.Nmaster1.zip"
+					]
+				},
+				"description": "Downloads the masers in text format"
+			},
+			"response": []
+		},
+		{
+			"name": "Master 2 - Continuous Futures  - zip format ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://180.179.151.146/IM/1.Nmaster2.zip",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"IM",
+						"1.Nmaster2.zip"
+					]
+				},
+				"description": "Downloads the masers in text format"
+			},
+			"response": []
+		},
+		{
+			"name": "Index List",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://180.179.151.146/mxds/idmdata.aspx?cmd=I",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"mxds",
+						"idmdata.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "I"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SUB (Subscribe Symbls for which you need Real Time Data)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/octet-stream"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "1000007,1001330,2054659,NIFTY 50,5213840"
+				},
+				"url": {
+					"raw": "http://180.179.151.146/mxds/idmdata.aspx?cmd=SUB,Enter_Your_Login_Id",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"mxds",
+						"idmdata.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "SUB,Enter_Your_Login_Id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SNAP (Snap Quote of A Single Requested symbols & also subscribes the symbol to receive Real Time Data)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "1000007"
+				},
+				"url": {
+					"raw": "http://180.179.151.146/mxds/idmdata.aspx?cmd=SNAPM,Enter_Your_Login_Id",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"mxds",
+						"idmdata.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "SNAPM,Enter_Your_Login_Id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SNAPM (Snap Quote of Multiple Requested symbols & also subscribes all the symbols to receive Real Time Data) Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "1000007,1001330,2054659,NIFTY 50,5213840"
+				},
+				"url": {
+					"raw": "http://180.179.151.146/mxds/idmdata.aspx?cmd=SNAPM,Enter_Your_Login_Id",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"mxds",
+						"idmdata.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "SNAPM,Enter_Your_Login_Id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Heartbeat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "UserId",
+							"value": "Enter_Your_Login_Id",
+							"type": "text"
+						},
+						{
+							"key": "Provider",
+							"value": "TRUEDATA",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "enter_your_password_here",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://180.179.151.146/IDAUTH/Heartbeat.aspx",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"IDAUTH",
+						"Heartbeat.aspx"
+					]
+				},
+				"description": "Login"
+			},
+			"response": []
+		},
+		{
+			"name": "Mdata",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://180.179.151.146/mxds/idmdata.aspx?cmd=d;MDATA,Enter_Your_Login_Id,0,0,0",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"mxds",
+						"idmdata.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "d;MDATA,Enter_Your_Login_Id,0,0,0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Current Day Tick History - idticks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://180.179.151.146/mxds/idticks.aspx?t=2049488&nd=0&p=0",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"mxds",
+						"idticks.aspx"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "2049488"
+						},
+						{
+							"key": "nd",
+							"value": "0"
+						},
+						{
+							"key": "p",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Current Day Min History - id1min",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://180.179.151.146/mxds/id1min.aspx?t=2049488&nd=0&p=0",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"mxds",
+						"id1min.aspx"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "2049488"
+						},
+						{
+							"key": "nd",
+							"value": "0"
+						},
+						{
+							"key": "p",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Historical Tick History - Number of Days",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://180.179.151.146/mxds/idticks.aspx?t=2049488&nd=2",
+					"protocol": "http",
+					"host": [
+						"180",
+						"179",
+						"151",
+						"146"
+					],
+					"path": [
+						"mxds",
+						"idticks.aspx"
+					],
+					"query": [
+						{
+							"key": "t",
+							"value": "2049488"
+						},
+						{
+							"key": "nd",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bar History (1,5,15, 60 min) - Number of Days - Token Number  From Master 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://43.241.61.45/iddataservice/idIntra.aspx?cmd=hmin&t=1001330&min=1&nd=2",
+					"protocol": "http",
+					"host": [
+						"43",
+						"241",
+						"61",
+						"45"
+					],
+					"path": [
+						"iddataservice",
+						"idIntra.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "hmin"
+						},
+						{
+							"key": "t",
+							"value": "1001330"
+						},
+						{
+							"key": "min",
+							"value": "1"
+						},
+						{
+							"key": "nd",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bar History (1,5,15, 60 min) - Date Range - Token Number  From Master 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://43.241.61.45/iddataservice/idIntra.aspx?cmd=hmin&t=1001330&min=1&sd=20190801&ed=20190805",
+					"protocol": "http",
+					"host": [
+						"43",
+						"241",
+						"61",
+						"45"
+					],
+					"path": [
+						"iddataservice",
+						"idIntra.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "hmin"
+						},
+						{
+							"key": "t",
+							"value": "1001330"
+						},
+						{
+							"key": "min",
+							"value": "1"
+						},
+						{
+							"key": "sd",
+							"value": "20190801"
+						},
+						{
+							"key": "ed",
+							"value": "20190805"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EOD History - Number of Days - Backwards From Today - Token Number  From Master 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://43.241.61.45/iddataservice/idDataservice.aspx?cmd=hdly&t=1001330&nd=20",
+					"protocol": "http",
+					"host": [
+						"43",
+						"241",
+						"61",
+						"45"
+					],
+					"path": [
+						"iddataservice",
+						"idDataservice.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "hdly"
+						},
+						{
+							"key": "t",
+							"value": "1001330"
+						},
+						{
+							"key": "nd",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EOD History - Date Range - Token Number  From Master 1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://43.241.61.45/iddataservice/idDataservice.aspx?cmd=hdly&t=1001330&sd=20190701&ed=20190805",
+					"protocol": "http",
+					"host": [
+						"43",
+						"241",
+						"61",
+						"45"
+					],
+					"path": [
+						"iddataservice",
+						"idDataservice.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "hdly"
+						},
+						{
+							"key": "t",
+							"value": "1001330"
+						},
+						{
+							"key": "sd",
+							"value": "20190701"
+						},
+						{
+							"key": "ed",
+							"value": "20190805"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Continuous Futures - Bar History (1,5,15, 60 min) - Number of Days - Token Number  From Master 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://43.241.61.45/iddataservice/idIntra.aspx?cmd=hmcf&t=2054659&min=1&nd=2",
+					"protocol": "http",
+					"host": [
+						"43",
+						"241",
+						"61",
+						"45"
+					],
+					"path": [
+						"iddataservice",
+						"idIntra.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "hmcf"
+						},
+						{
+							"key": "t",
+							"value": "2054659"
+						},
+						{
+							"key": "min",
+							"value": "1"
+						},
+						{
+							"key": "nd",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Continuous Futures - Bar History (1,5,15, 60 min) - Date Range - Token Number  From Master 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://43.241.61.45/iddataservice/idIntra.aspx?cmd=hmin&t=2054659&min=1&sd=20190801&ed=20190805",
+					"protocol": "http",
+					"host": [
+						"43",
+						"241",
+						"61",
+						"45"
+					],
+					"path": [
+						"iddataservice",
+						"idIntra.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "hmin"
+						},
+						{
+							"key": "t",
+							"value": "2054659"
+						},
+						{
+							"key": "min",
+							"value": "1"
+						},
+						{
+							"key": "sd",
+							"value": "20190801"
+						},
+						{
+							"key": "ed",
+							"value": "20190805"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Continuous Futures - EOD History - Number of Days - Backwards From Today -Token Number  From Master 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://43.241.61.45/iddataservice/idDataservice.aspx?cmd=hdly&t=2054659&nd=20",
+					"protocol": "http",
+					"host": [
+						"43",
+						"241",
+						"61",
+						"45"
+					],
+					"path": [
+						"iddataservice",
+						"idDataservice.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "hdly"
+						},
+						{
+							"key": "t",
+							"value": "2054659"
+						},
+						{
+							"key": "nd",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Continuous Futures - EOD History - Date Range - Token Number  From Master 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://43.241.61.45/iddataservice/idDataservice.aspx?cmd=hdly&t=2054659&sd=20190701&ed=20190805",
+					"protocol": "http",
+					"host": [
+						"43",
+						"241",
+						"61",
+						"45"
+					],
+					"path": [
+						"iddataservice",
+						"idDataservice.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "hdly"
+						},
+						{
+							"key": "t",
+							"value": "2054659"
+						},
+						{
+							"key": "sd",
+							"value": "20190701"
+						},
+						{
+							"key": "ed",
+							"value": "20190805"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Corporate Action - Latest - Sample ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authz",
+						"value": "Enter_your_X-AUTHZ_key_here"
+					}
+				],
+				"url": {
+					"raw": "http://65.182.110.13/idDataService/idxDataService.aspx?cmd=cahtk&m=1&t=1004963",
+					"protocol": "http",
+					"host": [
+						"65",
+						"182",
+						"110",
+						"13"
+					],
+					"path": [
+						"idDataService",
+						"idxDataService.aspx"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "cahtk"
+						},
+						{
+							"key": "m",
+							"value": "1"
+						},
+						{
+							"key": "t",
+							"value": "1004963"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
